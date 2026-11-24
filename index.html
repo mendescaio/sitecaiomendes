@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - Portfólio Pessoal</title>
+    <!-- Vincula o arquivo CSS dentro da pasta css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <div class="perfil-info">
+                <!-- Coloque sua foto na pasta 'img' com o nome 'perfil.jpg' -->
+                <img src="img/perfil.jpg" alt="Minha foto de perfil" class="foto-perfil">
+                <div>
+                    <h1>Caio Mendes</h1>
+                    <p class="subtitulo">Estudante de ADS | Apaixonado por Cinema, Viagens e Flamengo</p>
+                </div>
+            </div>
+
+            <!-- Botão de Alternar Tema -->
+            <button id="btn-tema" class="btn-acao" aria-label="Alternar tema claro ou escuro">
+                🌙 Modo Escuro
+            </button>
+        </div>
+
+        <!-- Menu de Navegação com as 3 opções solicitadas -->
+        <nav class="menu-navegacao" aria-label="Menu principal">
+            <ul class="container menu-lista">
+                <li><button class="menu-btn ativo" data-filtro="todos">Mostrar Tudo</button></li>
+                <li><button class="menu-btn" data-filtro="filmes">🎬 Filmes</button></li>
+                <li><button class="menu-btn" data-filtro="viagens">✈️ Viagens</button></li>
+                <li><button class="menu-btn" data-filtro="flamengo">🔴⚫ Flamengo</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+
+        <!-- Seção de Apresentação Pessoal -->
+        <section class="sobre-mim">
+            <h2>Sobre Mim</h2>
+            <p>
+                Olá! Meu nome é <strong>Caio Mendes</strong>, tenho 27 anos e moro em Brasilia. 
+                Atualmente curso Analise e desenvolvimento de sistemas na UDF. Criei esta página para compartilhar 
+                três coisas que fazem parte da minha rotina e personalidade: bons filmes, lugares que conheci 
+                e a minha paixão pelo Mengão. <p>
+                https://github.com/mendescaio </p>
+            </p>
+            <div class="curiosidade-box">
+                <button id="btn-curiosidade" class="btn-secundario">🎲 Ver uma curiosidade sobre mim</button>
+                <p id="texto-curiosidade" class="texto-curiosidade">Clique no botão acima para descobrir algo!</p>
+            </div>
+        </section>
+
+        <!-- Seção 1: Filmes -->
+        <section id="sec-filmes" class="categoria-secao" data-categoria="filmes">
+            <h2>🎬 Filmes Favoritos</h2>
+            <div class="grid-cards">
+                <article class="card">
+                    <img src="img/filme1.jpg" alt="Capa do Filme 1" class="card-img" >
+                    <div class="card-corpo">
+                        <h3>Trilogia - O Senhor dos Aneis </h3>
+                        <p>O Senhor dos Anéis acompanha a jornada de Frodo Bolseiro para destruir o Um Anel e impedir o retorno do Senhor das Trevas, Sauron.
+                            Ao lado da Sociedade do Anel, ele enfrenta batalhas épicas, desafios e sacrifícios pela Terra-média.
+                            Uma trilogia fantástica sobre amizade, coragem e a luta entre o bem e o mal.</p>
+                        <button class="btn-curtir" onclick="curtirCard(this)">🤍 Curtir (<span>0</span>)</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="img/filme2.jpg" alt="Capa do Filme 2" class="card-img">
+                    <div class="card-corpo">
+                        <h3>Velozes e furiosos</h3>
+                        <p>Velozes e Furiosos acompanha um grupo de pilotos liderados por Dominic Toretto em corridas clandestinas, assaltos e missões de alto risco.
+                            A franquia combina carros incríveis, ação explosiva e perseguições eletrizantes ao redor do mundo.
+                            Uma saga marcada pela velocidade, adrenalina e, acima de tudo, pela força da família!</p>
+                        <button class="btn-curtir" onclick="curtirCard(this)">🤍 Curtir (<span>0</span>)</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção 2: Viagens -->
+        <section id="sec-viagens" class="categoria-secao" data-categoria="viagens">
+            <h2>✈️ Minhas Viagens</h2>
+            <div class="grid-cards">
+                <article class="card">
+                    <img src="img/viagem1.jpg" alt="Foto da Viagem 1" class="card-img">
+                    <div class="card-corpo">
+                        <h3>Santiago, Chile</h3>
+                        <p>Viagem internacionais que fiz com minha esposa, pra conhecer a neve e conhecer outra cultura. Tanto em lingua, quanto em comida.</p>
+                        <button class="btn-curtir" onclick="curtirCard(this)">🤍 Curtir (<span>0</span>)</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="img/viagem2.jpg" alt="Foto da Viagem 2" class="card-img" >
+                    <div class="card-corpo">
+                        <h3>Paris, França</h3>
+                        <p>O coração da França, encanta com sua rica história, arquitetura icônica e cultura única.
+                            Da Torre Eiffel aos charmosos cafés e museus como o Louvre, a cidade oferece experiências inesquecíveis.
+                            Um destino perfeito para quem busca romantismo, gastronomia e alguns dos maiores patrimônios do mundo.</p>
+                        <button class="btn-curtir" onclick="curtirCard(this)">🤍 Curtir (<span>0</span>)</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção 3: Flamengo -->
+        <section id="sec-flamengo" class="categoria-secao" data-categoria="flamengo">
+            <h2>🔴⚫ Paixão Rubro-Negra</h2>
+            <div class="grid-cards">
+                <article class="card card-flamengo">
+                    <img src="img/flamengo1.jpg" alt="Jogo do Flamengo" class="card-img" onerror="this.src='https://via.placeholder.com/400x220?text=Foto+do+Flamengo+1'">
+                    <div class="card-corpo">
+                        <h3>Flamengo x River, 2019 </h3>
+                        <p>Em 23 de novembro de 2019, o Flamengo venceu o River Plate de virada por 2 a 1 e conquistou o bicampeonato da Copa Libertadores. A decisão, a primeira da história do torneio disputada em jogo único, aconteceu no Estádio Monumental de Lima, no Peru</p>
+                        <button class="btn-curtir" onclick="curtirCard(this)">🤍 Curtir (<span>0</span>)</button>
+                    </div>
+                </article>
+
+                <article class="card card-flamengo">
+                    <img src="img/flamengo2.jpg" alt="Ídolo ou Estádio" class="card-img" onerror="this.src='https://via.placeholder.com/400x220?text=Foto+do+Flamengo+2'">
+                    <div class="card-corpo">
+                        <h3>Ídolo: Zico </h3>
+                        <p>Zico é o maior ídolo da história do Flamengo e um dos maiores jogadores do futebol brasileiro.
+                            Conhecido como o "Galinho de Quintino", brilhou com sua técnica, visão de jogo e gols decisivos.
+                            Liderou o Flamengo nas conquistas da Libertadores e do Mundial de 1981, tornando-se uma lenda eterna do clube.</p>
+                        <button class="btn-curtir" onclick="curtirCard(this)">🤍 Curtir (<span>0</span>)</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Botão Flutuante Voltar ao Topo -->
+    <button id="btn-topo" title="Voltar ao topo">⬆️</button>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <p>Desenvolvido por <strong>Caio Mendes</strong> — Trabalho de programação Web 2026</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/caio-mendes-dias-119b41176/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/mendescaio" target="_blank" rel="noopener noreferrer">
+                GitHub
+            </a>
+        </div>
+
+    </footer>
+   
+   
+
+    <!-- Vincula o arquivo JavaScript dentro da pasta js -->
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
